@@ -347,3 +347,5 @@ mvn dependency:tree
 
 Ce projet est fourni à des fins éducatives.
 
+#   t h e - c h a t _ v i a _ j a v a _ s o c k e t  
+ 
