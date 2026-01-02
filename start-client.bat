@@ -1,9 +1,11 @@
 @echo off
 echo ========================================
-echo   Demarrage du Client de Chat
+echo   Client GUI (JavaFX)
 echo ========================================
 echo.
-mvn exec:java -Dexec.mainClass="org.example.socketproject.client.ClientMain"
+mvn exec:java -Dexec.mainClass="org.example.socketproject.ChatApplication"
 pause
+
+
 
 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.socketproject.client.ChatController">
+   <top>
+      <VBox spacing="4" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" spacing="12">
+               <children>
+                  <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="CHAT LAN" />
+                  <Label fx:id="statusLabel" text="● Hors ligne" textAlignment="CENTER" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="8">
+               <children>
+                  <Label text="IP :" />
+                  <TextField fx:id="hostField" prefWidth="130.0" promptText="localhost" />
+                  <Label text="Port :" />
+                  <TextField fx:id="portField" prefWidth="80.0" promptText="55555" />
+                  <Label text="User :" />
+                  <TextField fx:id="usernameField" prefWidth="120.0" promptText="Pseudo" />
+                  <Button text="Connexion" onAction="#connectToServer" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TextArea fx:id="chatArea" editable="false" promptText="Messages du chat..." wrapText="true" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" spacing="8" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="messageField" promptText="Écrire un message..." HBox.hgrow="ALWAYS" />
+            <Button defaultButton="true" onAction="#sendMessage" text="Envoyer" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
