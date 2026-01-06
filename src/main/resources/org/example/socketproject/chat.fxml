@@ -5,6 +5,10 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -22,6 +26,9 @@
                      </font></Label>
                   <Label fx:id="statusLabel" text="● Hors ligne" textAlignment="CENTER" />
                </children>
+               <effect>
+                  <Glow level="1.0" />
+               </effect>
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="8">
                <children>
@@ -40,7 +47,17 @@
    <center>
       <HBox spacing="8" BorderPane.alignment="CENTER">
          <children>
-            <TextArea fx:id="chatArea" editable="false" promptText="Messages du chat..." wrapText="true" HBox.hgrow="ALWAYS" />
+            <TextArea fx:id="chatArea" editable="false" promptText="Messages du chat..." wrapText="true" HBox.hgrow="ALWAYS">
+               <effect>
+                  <Lighting diffuseConstant="1.71" specularConstant="0.0" specularExponent="40.0" surfaceScale="2.07">
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant azimuth="239.48" elevation="49.14" />
+                     </light>
+                  </Lighting>
+               </effect></TextArea>
             <VBox prefWidth="150.0" spacing="4">
                <children>
                   <Label text="Utilisateurs connectés:" />
@@ -57,7 +74,7 @@
             <TextField fx:id="messageField" promptText="Écrire un message..." HBox.hgrow="ALWAYS" />
             <Button defaultButton="true" onAction="#sendMessage" prefHeight="33.0" prefWidth="110.0" text="Envoyer">
                <font>
-                  <Font name="Blackadder ITC" size="25.0" />
+                  <Font name="Arabic Typesetting" size="20.0" />
                </font></Button>
          </children>
       </HBox>
